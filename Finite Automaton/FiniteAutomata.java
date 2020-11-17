@@ -73,15 +73,13 @@ public class FiniteAutomata {
             for (int j=0; j<listOfStates.size(); j++) {
                 HashMap<HashMap<String, String>, String> transition = new HashMap<>();
                 transition.put(pair, listOfStates.get(j));
-                System.out.println(transition);
                 if (listOfTransitions.contains(transition))
                     state = listOfStates.get(j);
             }
         }
-        for (String s: finalStates) {
+        for (String s: finalStates) 
             if (state.equals(s.substring(1)))
                 return true;
-        }
         return false;
     }
 
